@@ -1,4 +1,4 @@
-# Edgeware Contracts Workshop (tutorials under active development)
+# Edgeware Contracts Workshop
 
 This is a self-guided tutorial which will teach you how to build both [Wasm](https://webassembly.org/) and EVM-Compatible smart contracts on [Edgeware](https://github.com/hicommonwealth/edgeware-node) using [Parity ink!](https://github.com/paritytech/ink/).
 
