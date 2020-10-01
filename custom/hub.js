@@ -3,8 +3,8 @@ var substrate_developer_hub_navbar = `
     <a href="https://substrate.dev">
         <img class="logo" 
             src="https://substrate.dev/img/Substrate-logo.svg"
-            alt="Substrate Developer Hub">
-        <h2 class="headerTitleWithLogo">Substrate Developer Hub</h2>
+            alt="Edgeware Contracts">
+        <h2 class="headerTitleWithLogo">Edgeware Contracts</h2>
     </a>
 </div>
 `;
