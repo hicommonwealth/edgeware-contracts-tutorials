@@ -20,28 +20,16 @@ cd flipper/
 ```
 flipper
 |
-+-- .cargo
-|   |
-|   +-- config            <-- Compiler Configuration
-+-- .ink
-|   |
-|   +-- abi_gen 
-|       |
-|       +-- Cargo.toml   
-|       +-- main.rs       <-- ABI Generator
-|
-+-- lib.rs                <-- Contract Source Code
-|
-+-- Cargo.toml            <-- Rust Dependencies and ink! Configuration
-|
-+-- .gitignore
+.
+├── Cargo.toml
+└── lib.rs
 ```
 
 ## Contract Source Code
 
 The ink CLI automatically generates the source code for the "Flipper" contract, which is about the simplest "smart" contract you can build. You can take a sneak peak as to what will come by looking at the source code here:
 
-[Flipper Example Source Code](https://github.com/paritytech/ink/blob/master/examples/flipper/lib.rs)
+[Flipper Example Source Code](https://github.com/hicommonwealth/ink/blob/master/examples/flipper/lib.rs)
 
 The Flipper contract is nothing more than a `bool` which gets flipped from true to false through the `flip()` function. We won't go so deep into the details of this source code because we will be walking you through the steps to build a more advanced contract!
 
@@ -60,8 +48,8 @@ To which you should see a successful test completion:
 ```bash
 $ cargo +nightly test
     running 2 tests
-    test flipper::tests::it_works ... ok
     test flipper::tests::default_works ... ok
+    test flipper::tests::it_works ... ok
 
     test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```

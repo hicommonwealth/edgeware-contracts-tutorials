@@ -34,19 +34,115 @@ Let's take a look at the structure inside:
 
 ``` JSON
 {
-  "registry": {
-    "strings": [...],
-    "types": [...]
+  "metadataVersion": "0.1.0",
+  "source": {
+    "hash": "0x9434083284b8fbf131d3a875227cfa064927b95cb754a0b602b40bdd262fc9bd",
+    "language": "ink! 3.0.0",
+    "compiler": "rustc 1.47.0-nightly"
   },
-  "storage": {...},
   "contract": {
-    "name": ...,
-    "constructors": [...],
-    "messages": [...],
+    "name": "flipper",
+    "version": "0.1.0",
+    "authors": [
+      "[your_name] <[your_email]>"
+    ]
+  },
+  "spec": {
+    "constructors": [
+      {
+        "args": [
+          {
+            "name": "init_value",
+            "type": {
+              "displayName": [
+                "bool"
+              ],
+              "id": 1
+            }
+          }
+        ],
+        "docs": [
+          " Constructor that initializes the `bool` value to the given `init_value`."
+        ],
+        "name": [
+          "new"
+        ],
+        "selector": "0xd183512b"
+      },
+      {
+        "args": [],
+        "docs": [
+          " Constructor that initializes the `bool` value to `false`.",
+          "",
+          " Constructors can delegate to other constructors."
+        ],
+        "name": [
+          "default"
+        ],
+        "selector": "0x6a3712e2"
+      }
+    ],
+    "docs": [],
     "events": [],
-    "docs": []
-  }
-}
+    "messages": [
+      {
+        "args": [],
+        "docs": [
+          " A message that can be called on instantiated contracts.",
+          " This one flips the value of the stored `bool` from `true`",
+          " to `false` and vice versa."
+        ],
+        "mutates": true,
+        "name": [
+          "flip"
+        ],
+        "payable": false,
+        "returnType": null,
+        "selector": "0xc096a5f3"
+      },
+      {
+        "args": [],
+        "docs": [
+          " Simply returns the current value of our `bool`."
+        ],
+        "mutates": false,
+        "name": [
+          "get"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "bool"
+          ],
+          "id": 1
+        },
+        "selector": "0x1e5ca456"
+      }
+    ]
+  },
+  "storage": {
+    "struct": {
+      "fields": [
+        {
+          "layout": {
+            "cell": {
+              "key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+              "ty": 1
+            }
+          },
+          "name": "value"
+        }
+      ]
+    }
+  },
+  "types": [
+    {
+      "def": {
+        "primitive": "bool"
+      }
+    }
+  ]
+}⏎
 ```
 
 You can see that this file describes all the interfaces that can be used to interact with your contract.
@@ -56,10 +152,6 @@ You can see that this file describes all the interfaces that can be used to inte
 * Contract stores information about the callable functions like  **constructors** and **messages** a user can call to interact with your contract. It also has helpful information like the **events** that are emitted by the contract or any **docs**.
 
 If you look close at the constructors and messages, you will also notice a `selector` which is a 4-byte hash of the function name and is used to route your contract calls to the correct functions.
-
-Polkadot-JS Apps uses this file to generate a friendly interface for deploying and interacting with your contract. :)
-
-In the next section we will start a Substrate node and configure the Polkadot-JS Apps UI to interact with it.
 
 ---
 
