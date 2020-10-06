@@ -1,7 +1,7 @@
 Introduction
 ===
 
-This chapter will get you started developing smart contracts with ink!.
+This chapter will get you started developing smart contracts with EVM.
 
 We will build a simple "Incrementer" contract which holds a number which you can increase with a function call.
 
