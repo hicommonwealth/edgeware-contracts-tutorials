@@ -1,4 +1,3 @@
-
 - [Welcome](/)
 
 - [**#0 Getting Started**](0/introduction.md)
