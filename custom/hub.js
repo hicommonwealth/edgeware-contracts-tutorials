@@ -1,8 +1,8 @@
 var substrate_developer_hub_navbar = `
 <div class="substrate-dev-hub-nav">
-    <a href="https://substrate.dev">
+    <a href="https://contracts.edgewa.re">
         <img class="logo" 
-            src="https://substrate.dev/img/Substrate-logo.svg"
+            src="./media/edgeware-logo.png"
             alt="Edgeware Contracts">
         <h2 class="headerTitleWithLogo">Edgeware Contracts</h2>
     </a>
