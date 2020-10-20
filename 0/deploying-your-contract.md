@@ -45,7 +45,7 @@ You will notice on the **Code** tab there is a new object that represents our sm
 
 To instantiate our contract we just need to give this contract account an _endowment_ of `10 Units` in order to pay the storage rent and again set the _maximum gas allowed_ to value(`1,000,000`):
 
-![An image of the Contracts Instance Page](./assets/flipper.init.png)
+![An image of the Contracts Instance Page](./assets/flipper-init.png)
 
 > **Note:** As mentioned earlier, contract creation involves creation of a new Account. As such, you must be sure to give the contract account at least the existential deposit defined by your blockchain. We also need to be able to pay the contract's rent (_`endowment`_). If we consume all of this deposit, the contract will become invalid. We can always refill the contract's balance and keep it on chain.
 
