@@ -1,16 +1,18 @@
 Running an Edgeware Node
 ===
 
-We want to provide fast experience for you. Requirements for this step is to have installed docker
+We want to provide fast experience for you. Requirements for this step is to have installed Docker. 
+
+> **Note** If you don't have [Docker installed, you can quickly install it from here](https://docs.docker.com/get-docker/)
 
 ```bash
 git clone https://github.com/yangwao/substrate_playground; cd substrate_playground;
 docker-compose up
 ```
 
-> **Note:** If you have run this command in the past, you probably want to purge your chain so that you run through this tutorial with a clean slate. You can do this easily with `edgeware purge-chain --dev`.
+> **Note:** If you have run this command in the past, you probably want to purge your chain storage, so that you run through this tutorial with a clean slate. You can do this easily to delete docker volume with `rm -rf data_edg/`.
 
-![An image of the terminal starting a Substrate node](./assets/start-edgeware-node.png)
+![An image of the terminal starting a Edgeware node](./assets/start-edgeware-node.png)
 
 You should start to see blocks being produced by your node in your terminal.
 
@@ -30,4 +32,4 @@ Click on the chain name > Development node/endpoint to connect to > Local Node (
 
 If you go into the **Explorer** tab of the UI, you should also see blocks being produced!
 
-![An image of the Substrate UI](./assets/block-explorer-edgeware.png)
+![An image of the Polkadot Apps UI](./assets/block-explorer-edgeware.png)
