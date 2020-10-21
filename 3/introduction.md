@@ -6,5 +6,5 @@ Meantime you can [have look on ready-made examples](https://github.com/hicommonw
 ### Fast track
 
 If you want to play, we compiled WASM and generated metadata for you
-* ERC20 [WASM](./assets/erc20.wasm) [METADATA](./assets/erc20.json)
-* ERC721 [WASM](./assets/erc721.wasm) [METADATA](./assets/erc721.json)
+* ERC20 [WASM](https://contracts.edgewa.re/3/assets/erc20.wasm) [METADATA](https://contracts.edgewa.re/3/assets/erc20.json)
+* ERC721 [WASM](https://contracts.edgewa.re/3/assets/erc721.wasm) [METADATA](https://contracts.edgewa.re/3/assets/erc721.json)
