@@ -5,15 +5,15 @@ Let's now extend our Incrementer to not only manage one number, but to manage on
 
 ## Storage HashMap
 
-In addition to `storage::Value`, ink! also supports a `storage::HashMap` which allows you to store items in a key-value mapping.
+In addition to storing individual values, ink! also supports a `HashMap` which allows you to store items in a key-value mapping.
 
 Here is an example of a mapping from user to a number:
 
 ```rust
 #[ink(storage)]
-struct MyContract {
+pub struct MyContract {
     // Store a mapping from AccountIds to a u32
-    my_number_map: storage::HashMap<AccountId, u32>,
+    my_number_map: ink_storage::collections::HashMap<AccountId, u32>,
 }
 ```
 
@@ -21,38 +21,48 @@ This means that for a given key, you can store a unique instance of a value type
 
 ## Storage HashMap API
 
-You can find the full HashMap API in the [core/src/storage2/collections/hashmap](https://github.com/paritytech/ink/blob/master/core/src/storage2/collections/hashmap/impls.rs) part of ink!.
+You can find the full HashMap API in the [crates/storage/src/collections/hashmap](https://github.com/paritytech/ink/blob/master/crates/storage/src/collections/hashmap/mod.rs) part of ink!.
 
 Here are some of the most common functions you might use:
 
 ```rust
     /// Inserts a key-value pair into the map.
     ///
+    /// Returns the previous value associated with the same key if any.
     /// If the map did not have this key present, `None` is returned.
+    pub fn insert(&mut self, key: K, new_value: V) -> Option<V> {/* --snip-- */}
+
+    /// Removes the key/value pair from the map associated with the given key.
     ///
-    /// If the map did have this key present, the value is updated,
-    /// and the old value is returned.
-    pub fn insert(&mut self, key: K, val: V) -> Option<V> {/* --snip-- */}
+    /// - Returns the removed value if any.
+    pub fn take<Q>(&mut self, key: &Q) -> Option<V> {/* --snip-- */}
 
-    /// Removes a key from the map, returning the value at the key if the key
-    /// was previously in the map.
-    pub fn remove<Q>(&mut self, key: &Q) -> Option<V> {/* --snip-- */}
-
-    /// Returns an immutable reference to the value corresponding to the key.
+    /// Returns a shared reference to the value corresponding to the key.
+    ///
+    /// The key may be any borrowed form of the map's key type,
+    /// but `Hash` and `Eq` on the borrowed form must match those for the key type.
     pub fn get<Q>(&self, key: &Q) -> Option<&V> {/* --snip-- */}
 
     /// Returns a mutable reference to the value corresponding to the key.
+    ///
+    /// The key may be any borrowed form of the map's key type,
+    /// but `Hash` and `Eq` on the borrowed form must match those for the key type.
     pub fn get_mut<Q>(&mut self, key: &Q) -> Option<&mut V> {/* --snip-- */}
 
-    /// Mutates the value associated with the key if any.
-    /// Returns a reference to the mutated element
-    pub fn mutate_with<Q, F>(&mut self, key: &Q, f: F) -> Option<&V> {/* --snip-- */}
-    
+    /// Returns `true` if there is an entry corresponding to the key in the map.
+    pub fn contains_key<Q>(&self, key: &Q) -> bool {/* --snip-- */}
+
+    /// Converts the OccupiedEntry into a mutable reference to the value in the entry
+    /// with a lifetime bound to the map itself.
+    pub fn into_mut(self) -> &'a mut V {/* --snip-- */}
+
+    /// Gets the given key's corresponding entry in the map for in-place manipulation.
+    pub fn entry(&mut self, key: K) -> Entry<K, V> {/* --snip-- */}
 ```
 
 ## Initializing a HashMap
 
-As mentioned a number of times throughout this tutorial, not initializing storage before you use it is a common error that can break your smart contract. For each key in a storage value, the value needs to be set before you can use it. To do this, we will create a private function which handles when the value is set and when it is not, and make sure we never work with uninitialized storage.
+As mentioned, not initializing storage before you use it is a common error that can break your smart contract. For each key in a storage value, the value needs to be set before you can use it. To do this, we will create a private function which handles when the value is set and when it is not, and make sure we never work with uninitialized storage.
 
 So given `my_number_map`, imagine we wanted the default value for any given key to be `0`. We can build a function like this:
 
@@ -62,14 +72,13 @@ So given `my_number_map`, imagine we wanted the default value for any given key 
 
 use ink_lang as ink;
 
-#[ink::contract(version = "0.1.0")]
+#[ink::contract]
 mod mycontract {
-    use ink_core::storage;
-    
+
     #[ink(storage)]
-    struct MyContract {
+    pub struct MyContract {
         // Store a mapping from AccountIds to a u32
-        my_number_map: storage::HashMap<AccountId, u32>,
+        my_number_map: ink_storage::collections::HashMap<AccountId, u32>,
     }
 
     impl MyContract {
@@ -93,31 +102,27 @@ Here is an example:
 
 use ink_lang as ink;
 
-#[ink::contract(version = "0.1.0")]
+#[ink::contract]
 mod mycontract {
-    use ink_core::storage;
 
-    
     #[ink(storage)]
-    struct MyContract {
+    pub struct MyContract {
         // Store a mapping from AccountIds to a u32
-        my_number_map: storage::HashMap<AccountId, u32>,
+        my_number_map: ink_storage::collections::HashMap<AccountId, u32>,
     }
 
     impl MyContract {
         // Get the value for a given AccountId
         #[ink(message)]
-        fn get(&self, of: AccountId) -> u32 {
-            let value = self.my_number_or_zero(&of);
-            value
+        pub fn get(&self, of: AccountId) -> u32 {
+            self.my_number_or_zero(&of)
         }
 
         // Get the value for the calling AccountId
         #[ink(message)]
-        fn get_my_number(&self) -> u32 {
+        pub fn get_my_number(&self) -> u32 {
             let caller = self.env().caller();
-            let value = self.my_number_or_zero(&caller);
-            value
+            self.my_number_or_zero(&caller)
         }
 
         // Returns the number for an AccountId or 0 if it is not set.
@@ -143,21 +148,21 @@ As you might have noticed in the example above, we use a special function called
 
 use ink_lang as ink;
 
-#[ink::contract(version = "0.1.0")]
+#[ink::contract]
 mod mycontract {
-    use ink_core::storage;
 
-    
     #[ink(storage)]
-    struct MyContract {
+    pub struct MyContract {
         // Store a contract owner
-        owner: storage::Value<AccountId>,
+        owner: AccountId,
     }
 
     impl MyContract {
         #[ink(constructor)]
-        fn new(&mut self, init_value: i32) {
-            self.owner.set(self.env().caller());
+        pub fn new(init_value: i32) -> Self {
+            Self {
+                owner: Self::env().caller();
+            }
         }
         /* --snip-- */
     }

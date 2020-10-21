@@ -12,38 +12,49 @@ If you are simply _reading_ from the contract storage, you only need to pass `&s
 ```rust
 impl MyContract {
     #[ink(message)]
-    fn my_getter(&self) -> u32 {
-        *self.my_number
-    } 
+    pub fn my_getter(&self) -> u32 {
+        self.my_number
+    }
 
     #[ink(message)]
-    fn my_setter(&mut self, new_value: u32) {
-        self.my_number.set(new_value);
+    pub fn my_setter(&mut self, new_value: u32) {
+        self.my_number = new_value;
     }
 }
 ```
 
-## Modifying a Storage Value
+## Lazy Storage Values
 
-You can always update the value of a storage item by calling `set` again.
-
-However, if you know the value is already set, then you can modify the value in a more ergonomic way:
+There is [a `Lazy` type](https://paritytech.github.io/ink/ink_storage/struct.Lazy.html) that can be used for ink! storage values that don't need to be loaded in some or most cases. Because they do not meet this criteria, many simple ink! examples, including those in this workshop, do not require the use `Lazy` values. Since there is some overhead associated with `Lazy` values, they should only be used where required.
 
 ```rust
+#[ink(storage)]
+pub struct MyContract {
+    // Store some number
+    my_number: ink_storage::Lazy<u32>,
+}
+
 impl MyContract {
-    #[ink(message)]
-    fn my_setter(&mut self, new_value: u32) {
-        self.my_number.set(new_value);
+    #[ink(constructor)]
+    pub fn new(init_value: i32) -> Self {
+        Self {
+            my_number: Default::default(),
+        }
     }
 
     #[ink(message)]
-    fn my_adder(&mut self, add_value: u32) {
-        self.my_number += add_value;
+    pub fn my_setter(&mut self, new_value: u32) {
+        ink_storage::Lazy::<u32>::set(&mut self.my_number, new_value);
+    }
+
+    #[ink(message)]
+    pub fn my_adder(&mut self, add_value: u32) {
+        let my_number = &mut self.my_number;
+        let cur = ink_storage::Lazy::<u32>::get(my_number);
+        ink_storage::Lazy::<u32>::set(my_number, cur + add_value);
     }
 }
 ```
-
-However, if the value is not initialized, your contract will compile fine, but will panic during contract execution! **We really cannot understate how easy it is to make mistakes this way.**
 
 ## Your Turn
 
