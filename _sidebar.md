@@ -27,9 +27,12 @@
     - [Supporting Approvals and Transfer From](2/supporting-approvals-and-transfer-from.md)
     - [Testing our Contract](2/testing-our-contract.md)
 
-- [**#3 EVM Basics**](3/introduction.md)
+- [**#3 WASM Advanced**](3/introduction.md)
+
+- [**#4 EVM Basics**](4/introduction.md)
 
 - [Docs](https://docs.edgewa.re)
 - [Report an Issue](https://github.com/hicommonwealth/edgeware-contracts-tutorials/issues)
 - [GitHub](https://github.com/paritytech/ink)
 - [Dev Chat](https://matrix.to/#/+edgeware-eco:matrix.org)
+- [!ink repository](https://github.com/hicommonwealth/ink)

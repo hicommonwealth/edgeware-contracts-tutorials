@@ -1,14 +1,10 @@
-Introduction
-===
+Here we will proceed to more advanced tutorials. 
+We are preparing content.
 
-This chapter will get you started developing smart contracts with EVM.
+Meantime you can [have look on ready-made examples](https://github.com/hicommonwealth/ink/tree/master/examples)
 
-We will build a simple "Incrementer" contract which holds a number which you can increase with a function call.
+### Fast track
 
-Over the course of this chapter you will learn:
-
-- The structure of ink! smart contracts
-- To store single values and hash maps
-- To safely get and set these values
-- To build public and private functions
-- To configure Rust to use safe math
+If you want to play, we compiled WASM and generated metadata for you
+* ERC20 [WASM](./assets/erc20.wasm) [METADATA](./assets/erc20.json)
+* ERC721 [WASM](./assets/erc721.wasm) [METADATA](./assets/erc721.json)
