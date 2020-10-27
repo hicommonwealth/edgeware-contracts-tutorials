@@ -30,7 +30,8 @@
 - [**#3 WASM Advanced**](3/introduction.md)
 
 - [**#4 EVM Basics**](4/introduction.md)
-
+    - [Using Metamask](4/interacting-with-a-Edgeware-node-using-metamask.md)
+    
 - [Documentation](https://docs.edgewa.re)
 - [GitHub](https://github.com/hicommonwealth/ink)
 - [Telegram: Edgeware Developers](https://t.me/edg_developers)
