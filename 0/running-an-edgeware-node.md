@@ -10,7 +10,7 @@ git clone https://github.com/yangwao/substrate_playground; cd substrate_playgrou
 docker-compose up
 ```
 
-> **Note:** If you have run this command in the past, you probably want to purge your chain storage, so that you run through this tutorial with a clean slate. You can do this easily to delete docker volume with `rm -rf data_edg/`.
+> **Note:** If you have run this command in the past, you probably want to purge your chain storage, so that you run through this tutorial with a clean slate. You can do this easily to delete docker volume with `docker-compose rm`.
 
 ![An image of the terminal starting a Edgeware node](./assets/start-edgeware-node.png)
 
@@ -25,7 +25,7 @@ https://polkadot.js.org/apps/
 To point the UI to your local node, you need to adjust the **Settings**. Just select 'Local Node (127.0.0.1:9944)' from the endpoint dropdown:
 
 ```
-Click on the chain name > Development node/endpoint to connect to > Local Node (127.0.0.1:9944) > Switch 🗘
+Click on the chain name > Development node/endpoint to connect to > Local Node (127.0.0.1:9944) > Switch 
 ```
 
 ![An image of the settings in Polkadot-JS Apps UI](./assets/switch-to-localhost.png)
