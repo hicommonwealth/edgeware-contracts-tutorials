@@ -32,6 +32,7 @@
 - [**#4 EVM Basics**](4/introduction.md)
     - [Setting up a Node](4/setting-up-a-local-node.md)
     - [Using Metamask](4/interacting-with-a-Edgeware-node-using-metamask.md)
+    - [Using Remix - Ethereum IDE](4/interacting-with-a-Edgeware-node-using-Remix.md)
     - [EVM Resources](4/edgeware-evm-resources.md)
 
 - [Documentation](https://docs.edgewa.re)
