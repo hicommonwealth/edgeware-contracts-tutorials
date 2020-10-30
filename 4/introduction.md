@@ -3,12 +3,9 @@ Introduction
 
 This chapter will get you started developing smart contracts with EVM.
 
-We will build a simple "Incrementer" contract which holds a number which you can increase with a function call.
+We will build and deploy a simple `ERC-20` contract.
 
 Over the course of this chapter you will learn:
-
-- The structure of ink! smart contracts
-- To store single values and hash maps
-- To safely get and set these values
-- To build public and private functions
-- To configure Rust to use safe math
+- Connect Metamask to Edgeware EVM
+- Using Remix with Edgeware EVM
+- Using web3.js/ethers.js with Edgeware EVM
