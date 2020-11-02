@@ -14,3 +14,33 @@ We will cover:
 8. Creating a more complex ERC20 contract.
 
 We would love for you to give feedback in these early stages, so open an issue or a PR!
+
+
+
+## How to Participate with the Edgeware Community
+
+We have all links at one point [linktr.ee/edg_developers](https://linktr.ee/edg_developers). 
+
+All our rooms are bridged so you can come in comfortable with your prefered chat app.
+
+### Chats - Technical
+
+* [Telegram: EDG_Developers](https://t.me/edg_developers)
+
+* [Element: Edgeware Builders](https://matrix.to/#/!ddnLMXyILAzUofbiMe:matrix.org?via=matrix.org&via=t2bot.io)
+
+### Chats - Governacne
+
+* [Eleement: Edgeware Governacne](https://matrix.to/#/!LKKkaPSDCjOusugedQ:matrix.org?via=matrix.org&via=t2bot.io&via=decent.modular.im)
+
+* [Telegram: Edgeware GWG / Council](https://t.me/EdgewareGWG)
+
+* [Telegram: Egeware General](https://t.me/heyedgeware)
+
+* [Telegram: Egeware Validators](https://t.me/EdgewareValidators)
+
+### Social
+
+* [Twitter.com/heyedgeware](https://twitter.com/heyedgeware)
+
+* [Twitter.com/edg_developers](https://twitter.com/edg_developers)
