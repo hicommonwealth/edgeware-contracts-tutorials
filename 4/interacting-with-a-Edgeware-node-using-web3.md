@@ -34,7 +34,26 @@ const addressTo = '0xB90168C8CBcd351D069ffFdA7B71cd846924d551';
 const web3 = new Web3('http://localhost:9933');
 ```
 
+Both the *create transaction* and *deploy transaction* sections are wrapped in an asynchronous function that handles the promises from our Web3 instance. To create the transaction, we use the `web3.eth.accounts.signTransaction(tx, privKey)` command, where we have to define the tx object with some parameters such as: `addressFrom`, `addressTo`, `number of tokens to send`, and the `gas limit`.
 
+```javascript
+const deploy = async () => {
+  console.log(
+    `Attempting to make transaction from ${addressFrom} to ${addressTo}`
+  );
+
+  const createTransaction = await web3.eth.accounts.signTransaction(
+    {
+      from: addressFrom,
+      to: addressTo,
+      value: web3.utils.toWei('1337', 'ether'),
+      gas: '2100000000',
+    },
+    privKey
+  );
+```
+
+Complete `createTransaction.js` should look like this! 
 
 ```javascript
 const Web3 = require('web3');
@@ -71,6 +90,38 @@ const deploy = async () => {
 };
 
 deploy();
+```
+
+### Check balance on accounts 
+
+Before running the script, we need another file to check the balances of both addresses before and after the transaction is executed. We can easily do this by leveraging the Ethereum compatibility features of Edgeware.
+
+`balances.js` looks like this:
+
+```javascript
+const Web3 = require('web3');
+
+// Variables definition
+const addressFrom = '0x6Be02d1d3665660d22FF9624b7BE0551ee1Ac91b';
+const addressTo = '0x6bB5423f0Dd01B8C5028a1bc01e1f1bDe4523e72';
+const web3 = new Web3('http://127.0.0.1:9933');
+
+// Balance call
+const balances = async () => {
+  const balanceFrom = web3.utils.fromWei(
+    await web3.eth.getBalance(addressFrom),
+    'ether'
+  );
+  const balanceTo = await web3.utils.fromWei(
+    await web3.eth.getBalance(addressTo),
+    'ether'
+  );
+
+  console.log(`The balance of ${addressFrom} is: ${balanceFrom} ETH.`);
+  console.log(`The balance of ${addressTo} is: ${balanceTo} ETH.`);
+};
+
+balances();
 ```
 
 ### Play time 
