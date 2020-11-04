@@ -29,11 +29,12 @@
 
 - [**#3 WASM Advanced**](3/introduction.md)
 
-- [**#4 EVM Basics**](4/introduction.md)
-    - [Setting up a Node](4/setting-up-a-local-node.md)
+- [**#4 EVM Basics**](4/evm-introduction.md)
+    - [Setting up a Edgeware EVM Node](4/setting-up-a-local-node.md)
     - [Using Metamask](4/interacting-with-a-Edgeware-node-using-metamask.md)
     - [Using Remix - Ethereum IDE](4/interacting-with-a-Edgeware-node-using-Remix.md)
     - [Using Truffle](4/interacting-with-a-Edgeware-node-using-truffle.md)
+    - [Using Web3](4/interacting-with-a-Edgeware-node-using-web3.md)
     - [EVM Resources](4/edgeware-evm-resources.md)
 
 - [Documentation](https://docs.edgewa.re)

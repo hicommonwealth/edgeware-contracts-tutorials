@@ -7,10 +7,11 @@ This guide walks through the process of deploying a Solidity-based smart contrac
 This guide assumes that you have a [running local Edgeware EVM node running in `--dev` mode.](4/setting-up-a-local-node.md). 
 
 ### Environment Prerequisites
+
 Installed [Nodejs](https://nodejs.org/en/) and particular package manager like [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable) or [npm](https://www.npmjs.com/get-npm), rest we have batteries included in this tutorial. 
 When you are ready, clone our tutorial repository with prepared stack for you
 
-```
+```shell
 git clone https://github.com/edgeware-builders/tutorials tutorials;cd tutorials/truffle;yarn
 
 ```
@@ -45,6 +46,8 @@ You notice few facts from here, our chainId is `42` and we are using solc versio
 
 The contract we will be deploying with Truffle is a simple ERC-20 contract. Youn can find this contract under `truffle/contracts/HedgeToken.sol`, it's content is showed here
 
+### ERC-20 Contract 
+
 ```javascript
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
@@ -72,16 +75,17 @@ module.exports = function (deployer) {
 
 `21000000000000000000000000` is the number of tokens to initially mint with the contract, that is 21 Milion with 18 decimal places. [Since OpenZepplin v3.0+, there is default decimal 18 for SimpleToken.sol](https://docs.openzeppelin.com/contracts/3.x/api/token/erc20#ERC20-_setupDecimals-uint8-)
 
-### Deploying a Contract to Edgeware EVM Using Truffle
-
 Now let's go to the essential part! After you had installed neccesary packages, continue in terminal with following command
 
+### Compile ERC-20 Contract
 ```
 npx truffle compile
 ```
 ![truffle-compile](assets/truffle-compile.png)
 
 What id does, it take OpenZepplin ERC20.sol token, compiles it with other referenced code in other OpenZepplin code, creates artifact (bytecode) and ABI (contract interface)
+
+### Deploying a Contract to Edgeware EVM Using Truffle
 
 Now let's go to the hot stuff, deploy it to our Edgeware EVM
 
@@ -90,7 +94,7 @@ npx truffle --network development migrate
 ```
 ![truffle-migrate](assets/truffle-migrate.png)
 
-As you may see, we are using our `development` network from `truffle-config.js`, you notice there whats our contract address.
+As you may see, we are using our `development` network from `truffle-config.js`. From migrate you'll notice there whats our contract address of our contract.
 
 ### We want to hear from you
 

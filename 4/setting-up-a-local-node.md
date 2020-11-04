@@ -8,10 +8,11 @@ This guide gives you steps to create a node for testing the Ethereum compatibili
 
 You will clone our repo with various docker-compose files and run it right away:
 
-```bash
+```shell
 git clone https://github.com/yangwao/substrate_playground; cd substrate_playground;
 docker-compose -f edgeware_frontier.yml up
 ```
+> **Note** If you want to flush data, delete docker container `docker-compose -f edgeware_frontier.yml rm` 
 
 You will see something like this
 
