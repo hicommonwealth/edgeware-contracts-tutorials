@@ -1,25 +1,33 @@
 # Edgeware Contracts Workshop
 
-This is a self-guided tutorial which will teach you how to build both [Wasm](https://webassembly.org/) and EVM-Compatible smart contracts on [Edgeware](https://github.com/hicommonwealth/edgeware-node) using [Parity ink!](https://github.com/paritytech/ink/).
+This is a self-guided tutorial which will teach you how to build both [WASM](https://webassembly.org/) and EVM-based smart contracts on [Edgeware](https://github.com/hicommonwealth/edgeware-node).
 
-We will cover:
+In the WASM tutorials, we will cover:
 
 1. Installing prerequisites on your computer
 2. Using the ink! CLI to start a new project
-3. Building and testing our contract
-4. Deploying our contract on a local Edgeware node
-5. Interacting with our contract using the Polkadot UI
-6. Creating a Basic flipper contract.
-7. Creating a Simple incrementer contract.
-8. Creating a more complex ERC20 contract.
+3. Building and testing your contract
+4. Deploying your contract on a local Edgeware node
+5. Interacting with your contract using the Polkadot UI
+6. Creating a basic flipper contract.
+7. Creating a simple incrementer contract
+8. Creating a more complex ERC20 contract
 
-We would love for you to give feedback in these early stages, so open an issue or a PR!
+In the EVM tutorials, we will cover:
+
+1. Setting up an Edgeware node
+2. Setting up Metamask to work with Edgeware
+3. Using Remix as an Ethereum IDE to compile, deploy, and call a contract
+4. Using Truffle to deploy a contract to Edgeware
+5. Using Web3.js to interact with Edgeware contracts programmatically
+
+We would love for you to give feedback in these early stages, so please feel free to open a PR or comment on Commonwealth!
 
 
 
-## How to Participate with the Edgeware Community
+## How to participate in the Edgeware community
 
-We have all links at one point [linktr.ee/edg_developers](https://linktr.ee/edg_developers). 
+We have links to all resources accessible from one point: [linktr.ee/edg_developers](https://linktr.ee/edg_developers).
 
 All our rooms are bridged so you can come in comfortable with your prefered chat app.
 
@@ -29,15 +37,15 @@ All our rooms are bridged so you can come in comfortable with your prefered chat
 
 * [Element: Edgeware Builders](https://matrix.to/#/!ddnLMXyILAzUofbiMe:matrix.org?via=matrix.org&via=t2bot.io)
 
-### Chats - Governacne
+### Chats - Governance
 
 * [Eleement: Edgeware Governacne](https://matrix.to/#/!LKKkaPSDCjOusugedQ:matrix.org?via=matrix.org&via=t2bot.io&via=decent.modular.im)
 
 * [Telegram: Edgeware GWG / Council](https://t.me/EdgewareGWG)
 
-* [Telegram: Egeware General](https://t.me/heyedgeware)
+* [Telegram: Edgeware General](https://t.me/heyedgeware)
 
-* [Telegram: Egeware Validators](https://t.me/EdgewareValidators)
+* [Telegram: Edgeware Validators](https://t.me/EdgewareValidators)
 
 ### Social
 
