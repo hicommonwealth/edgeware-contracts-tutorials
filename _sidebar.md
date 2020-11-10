@@ -1,6 +1,6 @@
 - [Edgeware Smart Contracts](/)
 
-- [**#0 Getting Started**](0/introduction.md)
+- [**#0 WASM Setup**](0/introduction.md)
 
     - [Setup](0/setup.md)
     - [Creating an ink! Project](0/creating-an-ink-project.md)
