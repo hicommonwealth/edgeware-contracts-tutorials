@@ -9,7 +9,7 @@ In the WASM tutorials, we will cover:
 3. Building and testing your contract
 4. Deploying your contract on a local Edgeware node
 5. Interacting with your contract using the Polkadot UI
-6. Creating a basic flipper contract.
+6. Creating a basic flipper contract
 7. Creating a simple incrementer contract
 8. Creating a more complex ERC20 contract
 
