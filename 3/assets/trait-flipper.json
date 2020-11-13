@@ -1,0 +1,103 @@
+{
+  "metadataVersion": "0.1.0",
+  "source": {
+    "hash": "0x93ec7d302ff5ecc5ca8f0602805d6068f036bfaa2bd7883e2f550a919b8ee735",
+    "language": "ink! 3.0.0-rc2",
+    "compiler": "rustc 1.47.0-nightly"
+  },
+  "contract": {
+    "name": "flipper",
+    "version": "3.0.0-rc2",
+    "authors": [
+      "Parity Technologies <admin@parity.io>"
+    ]
+  },
+  "spec": {
+    "constructors": [
+      {
+        "args": [],
+        "docs": [
+          " Creates a new flipper smart contract initialized to `false`."
+        ],
+        "name": [
+          "default"
+        ],
+        "selector": "0x6a3712e2"
+      },
+      {
+        "args": [
+          {
+            "name": "init_value",
+            "type": {
+              "displayName": [
+                "bool"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "docs": [],
+        "name": [
+          "Flip",
+          "new"
+        ],
+        "selector": "0x818482e7"
+      }
+    ],
+    "docs": [],
+    "events": [],
+    "messages": [
+      {
+        "args": [],
+        "docs": [],
+        "mutates": true,
+        "name": [
+          "Flip",
+          "flip"
+        ],
+        "payable": false,
+        "returnType": null,
+        "selector": "0xad931d5f"
+      },
+      {
+        "args": [],
+        "docs": [],
+        "mutates": false,
+        "name": [
+          "Flip",
+          "get"
+        ],
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "bool"
+          ],
+          "type": 1
+        },
+        "selector": "0x6b3549bc"
+      }
+    ]
+  },
+  "storage": {
+    "struct": {
+      "fields": [
+        {
+          "layout": {
+            "cell": {
+              "key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+              "ty": 1
+            }
+          },
+          "name": "value"
+        }
+      ]
+    }
+  },
+  "types": [
+    {
+      "def": {
+        "primitive": "bool"
+      }
+    }
+  ]
+}

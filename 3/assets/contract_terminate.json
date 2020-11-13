@@ -1,0 +1,52 @@
+{
+  "metadataVersion": "0.1.0",
+  "source": {
+    "hash": "0xd67d39fe76eae342b621bd79f3b70c51f2c744c1c5f3f01b66609f412be7bc8f",
+    "language": "ink! 3.0.0-rc2",
+    "compiler": "rustc 1.47.0-nightly"
+  },
+  "contract": {
+    "name": "contract_terminate",
+    "version": "3.0.0-rc1",
+    "authors": [
+      "Parity Technologies <admin@parity.io>"
+    ]
+  },
+  "spec": {
+    "constructors": [
+      {
+        "args": [],
+        "docs": [
+          " Creates a new instance of this contract."
+        ],
+        "name": [
+          "new"
+        ],
+        "selector": "0xd183512b"
+      }
+    ],
+    "docs": [],
+    "events": [],
+    "messages": [
+      {
+        "args": [],
+        "docs": [
+          " Terminates with the caller as beneficiary."
+        ],
+        "mutates": true,
+        "name": [
+          "terminate_me"
+        ],
+        "payable": false,
+        "returnType": null,
+        "selector": "0x57cb720f"
+      }
+    ]
+  },
+  "storage": {
+    "struct": {
+      "fields": []
+    }
+  },
+  "types": []
+}

@@ -8,7 +8,7 @@
     - [Running an Edgeware Node](0/running-an-edgeware-node.md)
     - [Deploying Your Contract](0/deploying-your-contract.md)
     - [Calling Your Contract](0/calling-your-contract.md)
-    - [Troubleshooting](0/troubleshooting.md)
+    - [Live Smart Contracts](0/live-deployed-smart-contracts.md)
 
 - [**#1 WASM Basics**](1/introduction.md)
 

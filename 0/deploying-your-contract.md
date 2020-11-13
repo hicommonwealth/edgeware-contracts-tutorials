@@ -15,7 +15,7 @@ In Substrate, the contract deployment process is split into two halves:
 With this pattern, contract code like the ERC20 standard can be put on the blockchain a single time, but instantiated any number of times. No need to continually upload the same source code over and waste space on the blockchain.
 ## Fast Track
 
-If you skipped previous steps and just want to see interaction with ink! smart contract, download [flipper.wasm](https://contracts.edgewa.re/0/assets/flipper.wasm) and [metadata.json](https://contracts.edgewa.re/0/assets/metadata.json)
+If you skipped previous steps and just want to see interaction with ink! smart contract, download [flipper.wasm](https://contracts.edgewa.re/0/assets/flipper.wasm) and [metadata.json](https://contracts.edgewa.re/0/assets/flipper.json)
 
 ## Putting Your Code on the Blockchain
 
