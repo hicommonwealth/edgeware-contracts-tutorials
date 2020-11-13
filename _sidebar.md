@@ -8,7 +8,7 @@
     - [Running an Edgeware Node](0/running-an-edgeware-node.md)
     - [Deploying Your Contract](0/deploying-your-contract.md)
     - [Calling Your Contract](0/calling-your-contract.md)
-    - [Troubleshooting](0/troubleshooting.md)
+    - [Live Smart Contracts](0/live-deployed-smart-contracts.md)
 
 - [**#1 WASM Basics**](1/introduction.md)
 
@@ -39,8 +39,9 @@
 
 - [Documentation](https://docs.edgewa.re)
 - [GitHub](https://github.com/hicommonwealth/ink)
-- [Telegram: Edgeware Developers](https://t.me/edg_developers)
 - [Element: Edgeware Builders](https://matrix.to/#/+edgeware-eco:matrix.org)
+- [Telegram: Edgeware Developers](https://t.me/edg_developers)
+- [Twitter: Edgeware Developers](https://twitter.com/edg_developers)
 - [!ink repository](https://github.com/hicommonwealth/ink)
 - [Edgeware Linktree](https://linktr.ee/edg_developers)
 - [Report an Issue](https://github.com/hicommonwealth/edgeware-contracts-tutorials/issues)

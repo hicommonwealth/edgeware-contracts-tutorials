@@ -39,7 +39,7 @@ All our rooms are bridged so you can come in comfortable with your prefered chat
 
 ### Chats - Governance
 
-* [Eleement: Edgeware Governacne](https://matrix.to/#/!LKKkaPSDCjOusugedQ:matrix.org?via=matrix.org&via=t2bot.io&via=decent.modular.im)
+* [Element: Edgeware Governacne](https://matrix.to/#/!LKKkaPSDCjOusugedQ:matrix.org?via=matrix.org&via=t2bot.io&via=decent.modular.im)
 
 * [Telegram: Edgeware GWG / Council](https://t.me/EdgewareGWG)
 

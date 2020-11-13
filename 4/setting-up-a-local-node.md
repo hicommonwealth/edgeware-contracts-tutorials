@@ -24,6 +24,6 @@ Afterwards you can head to [Polkadot Apps](https://polkadot.js.org/apps/?rpc=ws%
 
 Now you can continue to connect [Metamask](4/interacting-with-a-Edgeware-node-using-metamask.md), Remix, and Web3.js to have great experience.
 
-### We want to hear from you
+### Reach us for more engagement
 
-This is obviously a simple example, but it provides context for how you can start working with Edgeware and how you can try out its Ethereum compability features. [Feel free to join us in the chat channels (Discord, Element, Telegram)](https://linktr.ee/edg_developers). We would love to hear your feedback on Edgeware EVM and answer any questions that you may have.
+Glad you've made it through! 🥰 We are eager to guide your more on your exploration through Edgeware Ethereum compability feature. We are **keen to hear your experience and suggestion you may for us.**. You can feel free to [chat with us in the Edgeware's channels like Discord, Element and Telegram](https://linktr.ee/edg_developers), we can help you out with issues you may have or project you may want to be funded through our [Treasury program](https://docs.edgewa.re/edgeware-runtime/treasury). Don't hesitate to share your feedback on our channels, there is always space to improve! 🙌

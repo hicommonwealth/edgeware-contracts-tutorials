@@ -1,7 +1,7 @@
 {
   "metadataVersion": "0.1.0",
   "source": {
-    "hash": "0x3d9c89932759e97326550ae1ede0efc9ff570e170645ba0538da79a3129a6720",
+    "hash": "0x1ab1a476dc17e3ba900cc66098998a659a345ce5075e6b7f97cb6e0000a9ab4d",
     "language": "ink! 3.0.0-rc2",
     "compiler": "rustc 1.47.0-nightly"
   },
@@ -30,9 +30,10 @@
           " Creates a new ERC-20 contract with the specified initial supply."
         ],
         "name": [
+          "BaseErc20",
           "new"
         ],
-        "selector": "0xd183512b"
+        "selector": "0x1a6974fd"
       }
     ],
     "docs": [],
@@ -129,6 +130,7 @@
         ],
         "mutates": false,
         "name": [
+          "BaseErc20",
           "total_supply"
         ],
         "payable": false,
@@ -138,7 +140,7 @@
           ],
           "type": 1
         },
-        "selector": "0xdcb736b5"
+        "selector": "0xafc23806"
       },
       {
         "args": [
@@ -159,6 +161,7 @@
         ],
         "mutates": false,
         "name": [
+          "BaseErc20",
           "balance_of"
         ],
         "payable": false,
@@ -168,7 +171,7 @@
           ],
           "type": 1
         },
-        "selector": "0x56e929b2"
+        "selector": "0x8ed4f5f4"
       },
       {
         "args": [
@@ -198,6 +201,7 @@
         ],
         "mutates": false,
         "name": [
+          "BaseErc20",
           "allowance"
         ],
         "payable": false,
@@ -207,7 +211,7 @@
           ],
           "type": 1
         },
-        "selector": "0xf3cfff66"
+        "selector": "0x2c5ff956"
       },
       {
         "args": [
@@ -242,6 +246,7 @@
         ],
         "mutates": true,
         "name": [
+          "BaseErc20",
           "transfer"
         ],
         "payable": false,
@@ -251,7 +256,7 @@
           ],
           "type": 12
         },
-        "selector": "0xfae3a09d"
+        "selector": "0x8bec74a3"
       },
       {
         "args": [
@@ -284,6 +289,7 @@
         ],
         "mutates": true,
         "name": [
+          "BaseErc20",
           "approve"
         ],
         "payable": false,
@@ -293,7 +299,7 @@
           ],
           "type": 12
         },
-        "selector": "0x03d0e114"
+        "selector": "0xcf8831e9"
       },
       {
         "args": [
@@ -343,6 +349,7 @@
         ],
         "mutates": true,
         "name": [
+          "BaseErc20",
           "transfer_from"
         ],
         "payable": false,
@@ -352,7 +359,7 @@
           ],
           "type": 12
         },
-        "selector": "0xfcfb2ccd"
+        "selector": "0xc751448b"
       }
     ]
   },
