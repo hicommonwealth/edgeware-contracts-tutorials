@@ -1,9 +1,11 @@
 
-Edgeware has magical functionality, that you will deploy/upload your contract once and you can instantiate many times. 
+### Live Smart Contracts - Beresheet
 
-We have provide you code hashes to make it easy play for you!
+Edgeware has magical functionality, that you will **upload your contract once** and you can **instantiate many times**. 
 
-We have deployed few contracts for you to the [Beresheet - our testnet network - open Apps](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fberesheet1.edgewa.re#/contracts)
+> **Note** [Caching](https://wiki.polkadot.network/docs/en/build-build-with-polkadot#so-you-want-to-build-a-smart-contract). Contracts are cached by default and therefore means they only need to be deployed once, and afterward be instantiated as many times as you want. This helps to keep the storage load on the chain down to the minimum. On top of this, when a contract is no longer being used and the existential deposit is drained, the code will be erased from storage (known as reaping).
+
+We have deployed few contracts for you to the [Beresheet - our testnet network (open Apps)](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fberesheet1.edgewa.re#/contracts) to make it easy play for you. You will just need download particular metadata (ABI) for particular contract so your browser understands it. 
 
 * 📚 [You can find metadata here]((3/introduction.md))
 * ⛽️ [Faucet](https://beresheet-faucet.vercel.app/)
@@ -56,3 +58,7 @@ We have deployed few contracts for you to the [Beresheet - our testnet network -
 Copy one of codehashes from upthere, put them in code hash, name it and choose metadata, that json one, it should look like this 
 
 ![Save-Codehash](./assets/live-save-codehash.png)
+
+### Reach us for more engagement
+
+Glad you've made it through! 🥰 We are eager to guide your more on your exploration through Edgeware ink! compability feature. We are **keen to hear your experience and suggestion you may for us.**. You can feel free to [chat with us in the Edgeware's channels like Discord, Element and Telegram](https://linktr.ee/edg_developers), we can help you out with issues you may have or project you may want to be funded through our [Treasury program](https://docs.edgewa.re/edgeware-runtime/treasury). Don't hesitate to share your feedback on our channels, there is always space to improve! 🙌
