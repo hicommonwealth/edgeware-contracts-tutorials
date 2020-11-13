@@ -1,7 +1,13 @@
 
+Edgeware has magical functionality, that you will deploy/upload your contract once and you can instantiate many times. 
+
+We have provide you code hashes to make it easy play for you!
+
 We have deployed few contracts for you to the [Beresheet - our testnet network - open Apps](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fberesheet1.edgewa.re#/contracts)
 
-You can [find metadata here]((3/introduction.md))
+* 📚 [You can find metadata here]((3/introduction.md))
+* ⛽️ [Faucet](https://beresheet-faucet.vercel.app/)
+* ⛽️ [If faucet doesn't work, visit us at Telegram](https://t.me/edg_developers)
 
 ### Code hashes 
 * erc20 
