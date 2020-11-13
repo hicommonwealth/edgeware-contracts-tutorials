@@ -1,10 +1,9 @@
 {
-  "name": "substrate-contracts-workshop",
+  "name": "edgeware-contracts-tutorials",
   "version": "1.0.0",
-  "description": "A guided tutorial for building smart contracts on Parity Substrate",
+  "description": "Collected tutorials for building smart contracts on Edgeware",
   "main": "index.html",
-  "repository": "git@github.com:substrate-developer-hub/substrate-contracts-workshop.git",
-  "author": "Substrate DevHub <https://github.com/substrate-developer-hub>",
+  "repository": "git@github.com:hicommonwealth/edgeware-contracts-tutorials.git",
   "license": "MIT",
   "private": false,
   "devDependencies": {
