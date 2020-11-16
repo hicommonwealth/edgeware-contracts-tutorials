@@ -1,8 +1,10 @@
 # Edgeware Contracts Workshop
 
+Edgeware is blockchain platform with support [WASM Contracts Pallet](https://docs.edgewa.re/edgeware-runtime/wasm) and [EVM Ethereum compability layer](https://docs.edgewa.re/edgeware-runtime/evm).
+
 This is a self-guided tutorial which will teach you how to build both [WASM](https://webassembly.org/) and EVM-based smart contracts on [Edgeware](https://github.com/hicommonwealth/edgeware-node).
 
-In the WASM tutorials, we will cover:
+In the [WASM tutorials](0/introduction.md), we will cover:
 
 1. Installing prerequisites on your computer
 2. Using the ink! CLI to start a new project
@@ -13,7 +15,7 @@ In the WASM tutorials, we will cover:
 7. Creating a simple incrementer contract
 8. Creating a more complex ERC20 contract
 
-In the EVM tutorials, we will cover:
+In the [EVM tutorials](4/evm-introduction.md), we will cover:
 
 1. Setting up an Edgeware node
 2. Setting up Metamask to work with Edgeware
@@ -25,11 +27,11 @@ We would love for you to give feedback in these early stages, so please feel fre
 
 
 
-## How to participate in the Edgeware community
+## How to participate in the Edgeware Developers Guild - builders community
 
 We have links to all resources accessible from one point: [linktr.ee/edg_developers](https://linktr.ee/edg_developers).
 
-All our rooms are bridged so you can come in comfortable with your prefered chat app.
+All our rooms are bridged so you can come in comfortable with your prefered chat platform.
 
 ### Chats - Technical
 
