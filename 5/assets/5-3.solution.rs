@@ -57,7 +57,18 @@ mod ballot {
 
              // ACTION : Check if proposal names are provided.
              //         * If yes then create and push proposal objects to proposals vector
-
+                // if proposals are provided
+                if proposal_names.is_some() {
+                    // store the provided propsal names
+                    let names = proposal_names.unwrap();
+                    for name in &names {
+                        proposals.push(
+                            Proposal{
+                            name: String::from(name),
+                            vote_count: 0,
+                        });
+                    }
+                }
 
             Self {
                 chair_person,
@@ -144,6 +155,18 @@ mod ballot {
             //         * check if voter has not already voted
             //         * if everything alright update voters weight to 1
     
+
+            // only chair person can give right to vote
+            assert_eq!(caller,self.chair_person, "only chair person can give right to vote");
+
+            // the voter does not exists
+            assert_eq!(voter_opt.is_some(),true, "provided voterId does not exist");
+
+            let voter = voter_opt.unwrap();
+            // the voter should not have already voted
+            assert_eq!(voter.voted,false, "the voter has already voted");
+
+            voter.weight = 1;
         }
 
 
@@ -160,6 +183,13 @@ mod ballot {
             //        * check if the person has right to vote
             // 
 
+            assert_eq!(sender_opt.is_some(),true, "Sender is not a voter!");
+
+            let sender = sender_opt.unwrap();
+            assert_eq!(sender.voted,false, "You have already voted");
+
+            assert_eq!(sender.weight,1, "You have no right to vote");
+
 
             // get the proposal
             let proposal_opt = self.proposals.get_mut(proposal_index as usize);
@@ -168,6 +198,16 @@ mod ballot {
             //        * update voters.voted to true
             //        * update voters.vote to index of proposal to which he voted
             //        * Add weight of the voter to  proposals.vote_count 
+
+            assert_eq!(proposal_opt.is_some(),true, "Proposal index out of bound");
+
+            let proposal = proposal_opt.unwrap();
+
+            sender.voted = true;
+            sender.vote = Some(proposal_index);
+
+            proposal.vote_count += sender.weight;
+
         }
 
 
@@ -198,6 +238,11 @@ mod ballot {
             //  ACTION: use winning_proposal to get the index of winning proposal
             //        * check if any proposal has won
             //        * return winnning proposal name if exists
+            let winner_index: Option<usize> = self.winning_proposal();
+            assert_eq!(winner_index.is_some(),true, "No Proposal!");
+            let index = winner_index.unwrap();
+            let proposal = self.proposals.get(index).unwrap();
+            return &proposal.name
 
         }
 
