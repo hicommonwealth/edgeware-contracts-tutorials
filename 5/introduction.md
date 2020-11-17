@@ -3,7 +3,7 @@ Introduction
 
 In this chapter, we will teach you how to use ink! to write more complex contracts.
 
-We will build a "Ballot" contract which will allow users to add proposals to ballot and vote on them. The users will be able to register themselvs as a voter with a function call and there will be a chair person (owner) of the contract that will oversee the entire procedure.
+We will build a "Ballot" contract which will allow users to add proposals to a ballot and vote on them. The users will be able to register themselves as a voter with a function call and there will be a chair person (owner) of the contract that will oversee the process.
 
 Over the course of this chapter you will learn:
 

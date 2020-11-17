@@ -1,7 +1,7 @@
 Contract Template
 ===
 
-Lets start with making a new ink! project to build the ballot contract.
+Let's start with making a new ink! project to build the ballot contract.
 
 In your working directory, run:
 
@@ -9,33 +9,32 @@ In your working directory, run:
 cargo contract new ballot
 ```
 
-Replace the content of `lib.rs` file with the template provided on this page.
+Replace the content of `lib.rs` file with the template on the right.
 
 The contract storage consists of an `AccountId` which we initialize to the callers id in the constructor.
 There is a function `get_chair_person` implemented that returns the id of the the chair_person(owner) of the contract.
 
 ## Struct
-You have come across the [struct](https://doc.rust-lang.org/book/ch05-01-defining-structs.html) keyword in previous tutorials but so far we have used to define the storage of the contract. In this contract we use it to define following custom types which we are going to later use as part of our storage:
-- `Proposal`: This struct stores information about a proposal. Each proposal has:
+You have come across the [struct](https://doc.rust-lang.org/book/ch05-01-defining-structs.html) keyword in previous tutorials, but so far we have used struct keyword to define the storage of the contract. In this contract we use it to define the following custom types that are going to be used later use as part ballot storage:
+- `Proposal`: This struct stores information about a proposal. Each proposal contains:
     -  `name`: A field to store the name of the propsal
 
     -  `vote_count`: A 32 bit unsigned integer for storing the number of votes the proposal has received. 
 
-- `Voter`: For each voter in the system we instantiate a voter struct. Every voter has:
-    - `weight`: An unsiged weight indicating the weightage this voter has. The weightage for one voter can 
-    vary from other one based on how the network operates. 
+- `Voter`: For each voter in the system, we instantiate a voter struct with:
+    - `weight`: An unsiged weight indicating the weightage of the voter. The weightage of a voter can vary based on election/network parameters.
     
-    - `voted`: Its false by default, but once a voter has voted, its set to true so that the same voter can not case the vote again
+    - `voted`: It is set to false by default, but once a voter has voted, it's set to true so that the same voter can not cast his vote again.
     
-    - `delegate`: If a voter wants, they can delegate their vote to some other voter. This is Option because its not necessary for every voter to have a delegate.
+    - `delegate`: A voter can choose to delegate their vote to some one else. Since it's not necessary for voters to delegate, this field is created as an `Option`.
     
-    - `vote`: index of the proposal to which the user has casted the vote. Again its an option because when the voter is created in the system he has not voted to any proposal so its set to None by default.  
+    - `vote`: Index of the proposal that the user has casted the vote to. This is created as an `Option` set to None by default.
 
-Unlke our contract struct `Ballot` we dont' use the macro `ink(storage)` for our custom defined structs as there could only be single stroage struct for a contract. Also our structs are not public as users don't need to interact or know about these structs.
+Unlike our contract struct `Ballot` we don't use the macro `ink(storage)` for our custom defined structs as there can only be a single stroage struct for a contract. Also, our structs are not public as users don't need to interact with them directly.
 
 ## Compilaton and Warnings
 
-You can build the build the contract using `cargo +nightly build` and run tests using `cargo +nightly test`. The contract will sucessfully compile and it will pass all tests, but rust compiler will give you the following warnings
+You can build the contract using `cargo +nightly build` and run tests using `cargo +nightly test`. The contract will sucessfully compile and pass all tests, but the rust compiler will give you the following warnings:
 
 ```bash
 warning: struct is never constructed: `Proposal`

@@ -1,16 +1,16 @@
 Adding Functionality
 ===
 
-So in this part we will add functionality to our Ballot so that people:
-- Can cast vote on proposals
-- Delegate their votes to other people
-- Chairperson can assign voting rights to people
+In this part we will add functionality to our Ballot so that:
+- People can vote on proposals
+- People can delegate their votes
+- The chairperson can assign voting rights
 
 
 ### Contract Functionality
 
 #### **Constructor**:
-To begin with lets update the constuctor of our contract. As you can see in the code sample, the constrcutor now accepts an `Option<Vector<String>>`. The constrcutor expects a vector of strings to be passed as input we can check if the vector containing strings is provided using:
+Let's first update the constuctor of our contract. As you can see in the code sample on the right, the constrcutor now accepts an `Option<Vector<String>>` parameter. The constrcutor expects a vector of strings as inpput. We need to update the constructor so that the provided proposal names are used to create the `Proposal` objects and added to our ballot storage. To check if the vector ontaining strings is provided:
 ```rust
 if proposal_name.is_some() {
     names = proposal_name.unwrap()
@@ -18,8 +18,9 @@ if proposal_name.is_some() {
 
 }
 ``` 
+
 #### **Give Voting Right:**
-In last part we created a funciton that allowed users to add themself as a voter in the ballot. But remember we initialized their voter struct with `voter.weight=0`. This is because by default when a voter is created he/she has no voting right. So lets create a function `give_voting_right` that will allow only the chair person to update the weight to 1 for a given voter. The function will look something like this:
+In the previous part, we created a function that allowed users to add themselves as a voter. We initialized their voter struct with `voter.weight=0` because by default when a voter is created he/she has no voting right. So, let's create a function `give_voting_right` that will only allow the chairperson to update the weight to 1 for any given voter. The function will look something like this:
 
 ```rust
     // assuming that the caller is the chair person
@@ -35,11 +36,11 @@ In last part we created a funciton that allowed users to add themself as a voter
 
 
 #### **Vote:**
-Next up, lets implement a function that will allow voters to cast their votes. This function will take as input a proposal index to which user wishes to vote for. If the `caller` is a valid voter and has not already casted the vote, we will update the proposal at index `i` with the weight of the voter and update `voter.voted` to true and set `voter.vote` to index of proposal.
+Now, let's implement a function that will allow users to cast their votes. This function will take a proposal index as input. If the `caller` is a valid voter and has not already casted his/her vote, update the proposal at index `i` with the weight of the voter, update `voter.voted` to true and set `voter.vote` to index `i`.
 
 
 #### **Get Winning Proposal:**
-Now that the votes are casted, we will implement a function that will get the name of the proposal that won. In  a reall election, the winner is announced once the voting time has passed out, we will leave such implementation to you guys. For now we are going to allow any user to invoke this function and get the name of the propoasl that has won. Lets implement a function to return us the index of the proposal that has the maximum vote like this:
+Now that the votes are casted, we will implement a function that will get the name of the winning proposal. In  a reall election, the winner is announced once the voting time has passed out. We will leave such implementation to you guys. For now we will allow any user to invoke this function and get the name of the winning proposal. Let's implement a function to return the index of the proposal with the maximum votes:
 ```rust
 
     fn winning_proposal(&self) -> Option<usize> {
@@ -58,9 +59,10 @@ Now that the votes are casted, we will implement a function that will get the na
         return winning_index
     }
 ```
-Notice that this function returns an `Option<usize>` not `usize` as its possible that there is no proposal in the ballot and users might try to invoke this function in which case we will return `None`. Now this function could be used to easily find the name of the winning proposal!
+Notice that this function returns `Option<usize>`, not `usize` since its possible that there are no proposals in the ballot. This function can be used to easily to find the name of winning proposal.
 
-
+#### **Delegation:**
+In our voter struct, there is a `delegate` field defined as `Option<AccountId>` to allow voters to delegate their vote to someone else. This can be achieved using the following function: 
 ```rust 
     #[ink(message)]
     pub fn delegate(&mut self, to: AccountId)  {
@@ -106,15 +108,15 @@ Notice that this function returns an `Option<usize>` not `usize` as its possible
         }
     }
 ```
-You will see that in our delegation function we update the `sender.voted`, `sender.delegate` fields prior to checking if the person being delegated is a valid voter or not. The fact that the function will panic if the delegated person is not a valid voter will role back the changes made to sender voted and delegate fields.
+You will see that in the delegation function above, we update the `sender.voted` and `sender.delegate` fields prior to checking if the person being delegated is a valid voter. The function will panic if the delegated person is not a valid voter and will role back the changes made to `sender.voted` and `sender.delegate` fields.
 
 
 ## Your Turn!
-This wraps up our tutorial but you have got some work to do!
-- Update the `constructor` so that if vector of proposal names is provided, create new proposal objects and add to ballot.proposal
-- Provide definition of `give_voting_right` function as instrcuted in the template
-- Add `vote` functionality and update the ballot according the requirements mentioned in the template
-- Update `get_winning_proposal_name` funcitonality so that it returns the winning proposal name 
+This wraps up our tutorial. Practice what you learnt with the following exercises: 
+- Update the `constructor` function so that if vector of proposal names is provided, a new proposal object is created and added to `ballot.proposal`.
+- Define `give_voting_right` function as instructed.
+- Add `vote` functionality and update the ballot according to template requirements.
+- Update `get_winning_proposal_name` funcitonality to return the winning proposal name.
 
 
 <!-- tabs:start -->
