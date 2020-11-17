@@ -43,11 +43,10 @@
     - [Adding Functionality](5/adding-functionality.md)
     
 
-- [Documentation](https://docs.edgewa.re)
-- [GitHub](https://github.com/hicommonwealth/ink)
+- [General Documentation](https://docs.edgewa.re)
 - [Element: Edgeware Builders](https://matrix.to/#/+edgeware-eco:matrix.org)
 - [Telegram: Edgeware Developers](https://t.me/edg_developers)
 - [Twitter: Edgeware Developers](https://twitter.com/edg_developers)
 - [!ink repository](https://github.com/hicommonwealth/ink)
-- [Edgeware Linktree](https://linktr.ee/edg_developers)
+- [Discover Edgeware Community](https://linktr.ee/edg_developers)
 - [Report an Issue](https://github.com/hicommonwealth/edgeware-contracts-tutorials/issues)
