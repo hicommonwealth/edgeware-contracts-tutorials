@@ -123,7 +123,8 @@ This wraps up our tutorial but you have got some work to do!
 
 [embedded-code](./assets/5.3-template.rs ':include :type=code embed-template')
 
-
 #### ** Solution **
 
 [embedded-code-final](./assets/5.3-solution.rs ':include :type=code embed-final')
+
+<!-- tabs:end -->

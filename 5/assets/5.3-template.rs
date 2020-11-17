@@ -55,8 +55,8 @@ mod ballot {
             });
 
 
-             // ACTION : Check if proposal names are provided.
-             //        * If yes then create and push proposal objects to proposals vector
+            // ACTION : Check if proposal names are provided.
+            //        * If yes then create and push proposal objects to proposals vector
 
 
             Self {

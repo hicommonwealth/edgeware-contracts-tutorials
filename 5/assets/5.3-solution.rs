@@ -55,20 +55,20 @@ mod ballot {
             });
 
 
-             // ACTION : Check if proposal names are provided.
-             //        * If yes then create and push proposal objects to proposals vector
-                // if proposals are provided
-                if proposal_names.is_some() {
-                    // store the provided propsal names
-                    let names = proposal_names.unwrap();
-                    for name in &names {
-                        proposals.push(
-                            Proposal{
-                            name: String::from(name),
-                            vote_count: 0,
-                        });
-                    }
+            // ACTION : Check if proposal names are provided.
+            //        * If yes then create and push proposal objects to proposals vector
+            // if proposals are provided
+            if proposal_names.is_some() {
+                // store the provided propsal names
+                let names = proposal_names.unwrap();
+                for name in &names {
+                    proposals.push(
+                        Proposal{
+                        name: String::from(name),
+                        vote_count: 0,
+                    });
                 }
+            }
 
             Self {
                 chair_person,
