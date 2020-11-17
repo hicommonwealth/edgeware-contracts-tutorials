@@ -25,7 +25,7 @@ mod ballot {
     }
 
     /// Defines the storage of your contract.
-    /// Add new fields to the below struct in order
+    /// Add new fields the struct in order
     /// to add new static storage fields to your contract.
     #[ink(storage)]
     pub struct Ballot {
