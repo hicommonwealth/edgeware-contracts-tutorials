@@ -6,6 +6,7 @@ So in this part we will add functionality to our Ballot so that people:
 - Delegate their votes to other people
 - Chairperson can assign voting rights to people
 
+
 ### Contract Functionality
 
 #### **Constructor**:
@@ -31,6 +32,7 @@ In last part we created a funciton that allowed users to add themself as a voter
         }
     }
 ```
+
 
 #### **Vote:**
 Next up, lets implement a function that will allow voters to cast their votes. This function will take as input a proposal index to which user wishes to vote for. If the `caller` is a valid voter and has not already casted the vote, we will update the proposal at index `i` with the weight of the voter and update `voter.voted` to true and set `voter.vote` to index of proposal.
@@ -58,8 +60,6 @@ Now that the votes are casted, we will implement a function that will get the na
 ```
 Notice that this function returns an `Option<usize>` not `usize` as its possible that there is no proposal in the ballot and users might try to invoke this function in which case we will return `None`. Now this function could be used to easily find the name of the winning proposal!
 
-#### **Vote Delegation:**
-In a decentralized governance system, its very common that people back a certain person to vote on proposals on their behalf. Inspired by this we created `delegate:Option<AccountId>` feild in our voter struct. Lets introduce the functionality that will allow voters to delegate their votes to some other voter. Our delegation functionality will look something like this:
 
 ```rust 
     #[ink(message)]
@@ -108,12 +108,14 @@ In a decentralized governance system, its very common that people back a certain
 ```
 You will see that in our delegation function we update the `sender.voted`, `sender.delegate` fields prior to checking if the person being delegated is a valid voter or not. The fact that the function will panic if the delegated person is not a valid voter will role back the changes made to sender voted and delegate fields.
 
+
 ## Your Turn!
 This wraps up our tutorial but you have got some work to do!
-- Update the constructor so that if vector of proposal names is provided, create new proposal objects and add to ballot.proposal
+- Update the `constructor` so that if vector of proposal names is provided, create new proposal objects and add to ballot.proposal
 - Provide definition of `give_voting_right` function as instrcuted in the template
 - Add `vote` functionality and update the ballot according the requirements mentioned in the template
 - Update `get_winning_proposal_name` funcitonality so that it returns the winning proposal name 
+
 
 <!-- tabs:start -->
 
@@ -121,8 +123,7 @@ This wraps up our tutorial but you have got some work to do!
 
 [embedded-code](./assets/5.3-template.rs ':include :type=code embed-template')
 
+
 #### ** Solution **
 
 [embedded-code-final](./assets/5.3-solution.rs ':include :type=code embed-final')
-
-<!-- tabs:end -->

@@ -56,7 +56,7 @@ mod ballot {
 
 
              // ACTION : Check if proposal names are provided.
-             //         * If yes then create and push proposal objects to proposals vector
+             //        * If yes then create and push proposal objects to proposals vector
 
 
             Self {
@@ -88,7 +88,7 @@ mod ballot {
             self.voters.len() as usize
         }
 
-                /// the function adds the provided voter id into possible
+        /// the function adds the provided voter id into possible
         /// list of voters. By default the voter has no voting right,
         /// the contract owner must approve the voter before he can cast a vote
         #[ink(message)]
@@ -154,11 +154,9 @@ mod ballot {
             let sender_id = self.env().caller();
             let sender_opt =  self.voters.get_mut(&sender_id);
 
-            //  ACTION: check if the person calling the function
-            //          is a voter
+            //  ACTION: check if the person calling the function is a voter
             //        * check if the person has not already voted
             //        * check if the person has right to vote
-            // 
 
 
             // get the proposal
@@ -190,9 +188,9 @@ mod ballot {
             }
 
 
-        // Calls winning_proposal() function to get the index
-        // of the winner contained in the proposals array and then
-        // returns the name of the winner
+        /// Calls winning_proposal() function to get the index
+        /// of the winner contained in the proposals array and then
+        /// returns the name of the winner
         pub fn get_winning_proposal_name(&self) -> &String {
             
             //  ACTION: use winning_proposal to get the index of winning proposal
@@ -202,7 +200,7 @@ mod ballot {
         }
 
 
-         /// Delegate your vote to the voter `to`.
+        /// Delegate your vote to the voter `to`.
         /// If the `to` has already voted, you vote is casted to
         /// the same candidate as `to`
         #[ink(message)]
