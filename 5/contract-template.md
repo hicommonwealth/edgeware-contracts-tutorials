@@ -15,7 +15,7 @@ The contract storage consists of an `AccountId` which we initialize to the calle
 There is a function `get_chair_person` implemented that returns the id of the the chair_person(owner) of the contract.
 
 ## Struct
-You have come across the [struct](https://doc.rust-lang.org/book/ch05-01-defining-structs.html) keyword in previous tutorials, but so far we have used struct keyword to define the storage of the contract. In this contract we use it to define the following custom types that are going to be used later use as part ballot storage:
+You may have come across the [struct](https://doc.rust-lang.org/book/ch05-01-defining-structs.html) keyword in previous tutorials, but so far we have used structs to define the storage of contracts. In this contract, we use it to define the following custom types that are going to be used later use as part ballot storage:
 - `Proposal`: This struct stores information about a proposal. Each proposal contains:
     -  `name`: A field to store the name of the propsal
 
