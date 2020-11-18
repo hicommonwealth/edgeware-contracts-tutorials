@@ -10,7 +10,7 @@ In this part we will add functionality to our Ballot so that:
 ### Contract Functionality
 
 #### **Constructor**:
-Let's first update the constuctor of our contract. As you can see in the code sample on the right, the constrcutor now accepts a `Option<Vector<String>>` parameter. The constrcutor expects a vector of strings as input. We need to update the constructor so that the provided proposal names are used to create the `Proposal` objects and added to our ballot storage. To check if the vector containing strings is provided:
+Let's first update the constuctor of our contract. As you can see in the code sample on the right, the constructor now accepts a `Option<Vector<String>>` parameter. The constructor expects a vector of strings as input. We need to update the constructor so that the provided proposal names are used to create the `Proposal` objects and added to our ballot storage. To check if the vector containing strings is provided:
 
 ```rust
 
@@ -42,7 +42,7 @@ Now, let's implement a function that will allow users to cast their votes. This 
 
 
 #### **Get Winning Proposal:**
-Now that the votes are casted, we will implement a function that will get the name of the winning proposal. In  a recall election, the winner is announced once the voting time has passed out. We will leave such implementation to you. For now, we will allow any user to invoke this function and get the name of the winning proposal. Let's implement a function to return the index of the proposal with the maximum votes:
+Now that the votes are cast, we will implement a function that will get the name of the winning proposal. In a recall election, the winner is announced once the voting time has passed out. We will leave such implementation to you. For now, we will allow any user to invoke this function and get the name of the winning proposal. Let's implement a function to return the index of the proposal with the maximum votes:
 ```rust
     fn winning_proposal(&self) -> Option<usize> {
         let mut winning_vote_vount:u32 = 0;
@@ -113,7 +113,7 @@ You will see that in the delegation function above, we update the `sender.voted`
 
 
 ## Your Turn!
-This wraps up the tutorial. Practice what you learnt with the following exercises: 
+This wraps up the tutorial. Practice what you learned with the following exercises: 
 - Update the `constructor` function so that if a vector of proposal names is provided, a new proposal object is created and added to `ballot.proposal`.
 - Define the `give_voting_right` function as instructed.
 - Add `vote` functionality and update the ballot according to the template requirements.
