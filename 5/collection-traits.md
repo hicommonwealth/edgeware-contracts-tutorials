@@ -31,7 +31,7 @@ Vectors can be instantiated in the same way as a HashMap.  New objects can be ad
 Rememeber that the `vector.get` returns an `Option` not the actual object!
 
 ## Traits
-A trait tells the Rust compiler about the functionality a particular type has, and can be shared with other types. You can read more about them [here](https://doc.rust-lang.org/book/ch10-02-traits.html). Before using the custom built structures inside the `Ballot` storage, certain traits are required to be implemented for `Voter` and `Proposal` strcuts. These traits include:
+A trait tells the Rust compiler about the functionality a particular type has, and can be shared with other types. You can read more about them [here](https://doc.rust-lang.org/book/ch10-02-traits.html). Before using the custom built structures inside the `Ballot` storage, certain traits are required to be implemented for `Voter` and `Proposal` structs. These traits include:
 
 - `Debug`: Allows debug formatting in format strings
 - `Clone` : This trait allows you to create a deep copy of object
