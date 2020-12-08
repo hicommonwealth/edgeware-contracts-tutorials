@@ -37,6 +37,12 @@
     - [Using Web3](4/interacting-with-a-Edgeware-node-using-web3.md)
     - [EVM Resources](4/edgeware-evm-resources.md)
 
+- [**#5 WASM Ballot Contract**](5/introduction.md)
+    - [Contract Template](5/contract-template.md)
+    - [Collection and Traits](5/collection-traits.md)
+    - [Adding Functionality](5/adding-functionality.md)
+    
+
 - [General Documentation](https://docs.edgewa.re)
 - [Element: Edgeware Builders](https://matrix.to/#/+edgeware-eco:matrix.org)
 - [Telegram: Edgeware Developers](https://t.me/edg_developers)
