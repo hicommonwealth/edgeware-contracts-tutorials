@@ -32,6 +32,9 @@ You may have come across the [struct](https://doc.rust-lang.org/book/ch05-01-def
 
 Unlike our contract struct `Ballot` we don't use the macro `ink(storage)` for our custom defined structs as there can only be a single stroage struct for a contract. Also, our structs are not public as users don't need to interact with them directly.
 
+## Ink_Prelude
+`ink_pelude` crate provides data structures such as `HashMap`, `Vector` etc.. to operate on contract memory during contract execution. We will be importing these collections in next parts of this tutorial so before moving forward update contract's cargo.toml file with following dependency: `ink_prelude = { version = "3.0.0-rc2", default-features = false }`
+
 ## Compilaton and Warnings
 
 You can build the contract using `cargo +nightly build` and run tests using `cargo +nightly test`. The contract will sucessfully compile and pass all tests, but the rust compiler will give you the following warnings:
