@@ -27,11 +27,11 @@ We need to set a couple of values in the variables definitions:
 ```javascript
 const Web3 = require('web3');
 
-const privKey =
-  '99B3C12287537E38C90A9219D4CB074A89A16E9CDB20BF85728EBD97C343E342'; // Genesis private key
-const addressFrom = '0x6Be02d1d3665660d22FF9624b7BE0551ee1Ac91b';
-const addressTo = '0xB90168C8CBcd351D069ffFdA7B71cd846924d551';
-const web3 = new Web3('http://localhost:9933');
+// genesis private key
+const privKey = '1111111111111111111111111111111111111111111111111111111111111111';
+const addressFrom = '0x19e7e376e7c213b7e7e7e46cc70a5dd086daff2a';
+const addressTo = '0x6bB5423f0Dd01B8C5028a1bc01e1f1bDe4523e72';
+const web3 = new Web3('http://localhost:9933/');
 ```
 
 Both the *create transaction* and *deploy transaction* sections are wrapped in an asynchronous function that handles the promises from our Web3 instance. To create the transaction, we use the `web3.eth.accounts.signTransaction(tx, privKey)` command, where we have to define the tx object with some parameters such as: `addressFrom`, `addressTo`, `number of tokens to send`, and the `gas limit`.
@@ -47,7 +47,7 @@ const deploy = async () => {
       from: addressFrom,
       to: addressTo,
       value: web3.utils.toWei('1337', 'ether'),
-      gas: '2100000000',
+      gas: 21000,
     },
     privKey
   );
@@ -58,11 +58,11 @@ Complete `createTransaction.js` should look like this!
 ```javascript
 const Web3 = require('web3');
 
-const privKey =
-  '99B3C12287537E38C90A9219D4CB074A89A16E9CDB20BF85728EBD97C343E342'; // Genesis private key
-const addressFrom = '0x6Be02d1d3665660d22FF9624b7BE0551ee1Ac91b';
-const addressTo = '0xB90168C8CBcd351D069ffFdA7B71cd846924d551';
-const web3 = new Web3('http://localhost:9933');
+// genesis private key
+const privKey = '1111111111111111111111111111111111111111111111111111111111111111';
+const addressFrom = '0x19e7e376e7c213b7e7e7e46cc70a5dd086daff2a';
+const addressTo = '0x6bB5423f0Dd01B8C5028a1bc01e1f1bDe4523e72';
+const web3 = new Web3('http://localhost:9933/');
 
 // Create transaction
 const deploy = async () => {
@@ -75,7 +75,7 @@ const deploy = async () => {
       from: addressFrom,
       to: addressTo,
       value: web3.utils.toWei('1337', 'ether'),
-      gas: '2100000000',
+      gas: 21000,
     },
     privKey
   );
@@ -87,6 +87,7 @@ const deploy = async () => {
   console.log(
     `Transaction successful with hash: ${createReceipt.transactionHash}`
   );
+  process.exit(0);
 };
 
 deploy();
@@ -102,7 +103,7 @@ Before running the script, we need another file to check the balances of both ad
 const Web3 = require('web3');
 
 // Variables definition
-const addressFrom = '0x6Be02d1d3665660d22FF9624b7BE0551ee1Ac91b';
+const addressFrom = '0x19e7e376e7c213b7e7e7e46cc70a5dd086daff2a';
 const addressTo = '0x6bB5423f0Dd01B8C5028a1bc01e1f1bDe4523e72';
 const web3 = new Web3('http://127.0.0.1:9933');
 
