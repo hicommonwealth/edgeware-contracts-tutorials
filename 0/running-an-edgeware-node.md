@@ -6,7 +6,7 @@ We want to provide a fast setup experience for you. If you have Docker, you can 
 > **Note** If you don't have [Docker installed, you can quickly install it from here](https://docs.docker.com/get-docker/)
 
 ```bash
-git clone https://github.com/yangwao/substrate_playground; cd substrate_playground;
+git clone https://github.com/hicommonwealth/edgeware-node; cd edgeware-node/docker;
 docker-compose up
 ```
 
