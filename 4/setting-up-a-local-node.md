@@ -2,17 +2,17 @@
 
 This guide walks you through setting up an Edgeware node with Ethereum/EVM compatibility.
 
-> **Note** This is a fast-track way to run a node. [You can always compile from source](https://github.com/hicommonwealth/edgeware-node/tree/edgeware-frontier) as well. We recommend using your own compiled binaries for production mainnet.
+> **Note** This is a fast-track way to run a node. [You can always compile from source](https://github.com/hicommonwealth/edgeware-node/tree/v3.2.0) as well. We recommend using your own compiled binaries for production mainnet.
 
 > **Note** If you don't have [Docker installed, you can quickly install it from here](https://docs.docker.com/get-docker/)
 
 You can clone our repo with docker-compose to get started right away:
 
 ```shell
-git clone https://github.com/yangwao/substrate_playground; cd substrate_playground;
-docker-compose -f edgeware_frontier.yml up
+git clone https://github.com/hicommonwealth/edgeware-node; cd edgeware-node/docker;
+docker-compose up
 ```
-> **Note** If you want to reset or purge the local chain, delete the docker container by running `docker-compose -f edgeware_frontier.yml rm`
+> **Note** If you want to reset or purge the local chain, delete the docker container by running `docker-compose rm`
 
 You will see something like this:
 
