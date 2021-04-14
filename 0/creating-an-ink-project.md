@@ -27,7 +27,7 @@ flipper
 
 ## Contract Source Code
 
-The ink CLI automatically generates the source code for the "Flipper" contract, which is about the simplest "smart" contract you can build. You can take a sneak peak as to what will come by looking at the source code here:
+The ink! CLI automatically generates the source code for the "Flipper" contract, which is about the simplest "smart" contract you can build. You can take a sneak peak as to what will come by looking at the source code here:
 
 [Flipper Example Source Code](https://github.com/hicommonwealth/ink/blob/master/examples/flipper/lib.rs)
 

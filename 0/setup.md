@@ -11,6 +11,11 @@ If you are using __OSX__ or most popular __Linux__ distros, you can do it by run
 
 ```bash
 curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+# after installing the Rust toolchain installer, you must activate
+# the env file using
+source $HOME/.cargo/env
+# or restart the terminal to use `rustup`
 ```
 
 ```
